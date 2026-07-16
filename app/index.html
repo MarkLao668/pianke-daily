@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self';" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>片刻日程</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="titlebar-brand">
+        <span class="seal-mark">片</span>
+        <span data-i18n="appName">片刻日程</span>
+      </div>
+      <div class="local-state"><i></i><span data-i18n="localOffline">本地保存 · 不联网</span></div>
+    </div>
+
+    <main class="app" id="app">
+      <section class="cinema-panel" id="cinema-panel">
+        <img id="day-image" alt="" />
+        <div class="image-wash"></div>
+        <div class="sprocket" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="film-number">36</div>
+
+        <div class="brand-lockup">
+          <span class="brand-small" data-i18n="oneDayOneScene">一日 · 一幕</span>
+          <strong>片刻</strong>
+          <em>日程</em>
+        </div>
+
+        <div class="shichen-clock" id="shichen-clock" role="timer" aria-live="off">
+          <div class="clock-dial" aria-hidden="true">
+            <div class="clock-branches" id="clock-branches">
+              <span>子</span><span>丑</span><span>寅</span><span>卯</span>
+              <span>辰</span><span>巳</span><span>午</span><span>未</span>
+              <span>申</span><span>酉</span><span>戌</span><span>亥</span>
+            </div>
+            <i class="clock-hand hour-hand" id="hour-hand"></i>
+            <i class="clock-hand minute-hand" id="minute-hand"></i>
+            <i class="clock-hand second-hand" id="second-hand"></i>
+            <b class="clock-pin"></b>
+          </div>
+          <div class="clock-reading">
+            <span id="clock-label">漏刻</span>
+            <strong id="shichen-reading">未时初刻</strong>
+            <time id="exact-time">00:00:00</time>
+          </div>
+        </div>
+
+        <div class="scene-caption">
+          <div class="scene-index" id="scene-index">第壹幕</div>
+          <h1 id="hero-weekday">周一</h1>
+          <p id="hero-line">山路入云深</p>
+          <div class="hero-date">
+            <span id="hero-month">七月</span>
+            <strong id="hero-day">14</strong>
+            <span id="hero-year">二〇二六</span>
+          </div>
+        </div>
+
+        <div class="image-credit" id="image-credit">山关 · 晨雾</div>
+      </section>
+
+      <section class="planner-panel">
+        <header class="planner-header">
+          <div class="month-nav">
+            <button id="previous-day" class="arrow-button" type="button" aria-label="前一天" data-i18n-aria="previousDay">←</button>
+            <div>
+              <p id="full-date">二〇二六年七月十四日</p>
+              <span id="lunar-caption" data-i18n="dateCaption">今日场记</span>
+            </div>
+            <button id="next-day" class="arrow-button" type="button" aria-label="后一天" data-i18n-aria="nextDay">→</button>
+          </div>
+          <div class="planner-actions">
+            <label class="theme-picker preference-picker">
+              <span data-i18n="theme">风格</span>
+              <select id="theme-select" aria-label="风格"></select>
+            </label>
+            <label class="language-picker preference-picker">
+              <span data-i18n="language">语言</span>
+              <select id="language-select" aria-label="语言"></select>
+            </label>
+            <button id="today-button" class="today-button" type="button" data-i18n="today">回到今日</button>
+          </div>
+        </header>
+
+        <nav class="week-strip" id="week-strip" aria-label="本周日期" data-i18n-aria="weekNav"></nav>
+
+        <section class="writing-card">
+          <div class="writing-heading">
+            <div>
+              <span data-i18n="titleLabel">今 日 题 签</span>
+              <input id="day-title" maxlength="80" placeholder="给今天取一个片名……" data-i18n-placeholder="titlePlaceholder" aria-label="今日题签" />
+            </div>
+            <div class="take-mark">
+              <small>TAKE</small>
+              <strong id="take-progress">0 / 0</strong>
+            </div>
+          </div>
+          <textarea id="day-voiceover" rows="2" maxlength="240" placeholder="写下一句旁白……" data-i18n-placeholder="voiceoverPlaceholder" aria-label="今日旁白"></textarea>
+        </section>
+
+        <section class="script-section" aria-labelledby="script-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker" data-i18n="storyboard">今 日 分 镜</span>
+              <h2 id="script-title" data-i18n="tasks">要做的事</h2>
+            </div>
+            <div class="progress-ring" id="progress-ring"><span id="progress-percent">0%</span></div>
+          </div>
+
+          <form id="add-form" class="add-form">
+            <input id="new-time" type="time" aria-label="时间" data-i18n-aria="time" />
+            <input id="new-title" maxlength="120" placeholder="写下一件要完成的事……" data-i18n-placeholder="newTask" autocomplete="off" aria-label="新事项" data-i18n-aria="newTask" />
+            <button type="submit"><span>＋</span><b data-i18n="add">添一笔</b></button>
+          </form>
+
+          <div class="error-bar" id="error-bar" role="alert" hidden></div>
+          <div class="task-list" id="task-list" aria-live="polite"></div>
+        </section>
+
+        <footer class="planner-footer">
+          <span id="save-status"><i></i><b id="save-status-copy">已落笔</b></span>
+          <div>
+            <button id="show-data" type="button" data-i18n="dataLocation">数据位置</button>
+            <button id="backup-data" type="button" data-i18n="backup">备份</button>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script src="i18n-data.js"></script>
+    <script src="renderer.js"></script>
+  </body>
+</html>

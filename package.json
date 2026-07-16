@@ -1,0 +1,65 @@
+{
+  "name": "pianke-daily-desktop",
+  "version": "1.2.0",
+  "description": "片刻日程——带古典与现代双主题电影美学的本地日程软件",
+  "main": "main.js",
+  "author": "Mark LAO",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.js",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "build": {
+    "appId": "com.marklao.pianke.daily",
+    "productName": "片刻日程",
+    "asar": true,
+    "electronLanguages": [
+      "zh-CN",
+      "zh-TW",
+      "en-US",
+      "ja",
+      "ko",
+      "es",
+      "fr",
+      "de",
+      "pt-BR",
+      "ru",
+      "ar",
+      "hi"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "data-store.js",
+      "app/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "artifactName": "片刻日程-${version}-便携版.${ext}"
+    },
+    "portable": {
+      "artifactName": "片刻日程-${version}-便携版.${ext}",
+      "unicode": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^43.1.0",
+    "electron-builder": "^26.15.3"
+  }
+}
