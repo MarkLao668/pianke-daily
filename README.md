@@ -1,133 +1,136 @@
-# 片刻日程
+# Pianke Daily
 
-一款完全离线、带有电影美学的 Windows 日程软件。它把一周七天设计成七幕不同的场景，让每日计划像一份正在展开的电影场记。
+Pianke Daily is a private, fully offline planner for Windows with a cinematic visual identity. Each day of the week has its own scene, turning everyday planning into a quiet sequence of seven distinct frames.
 
-## 界面预览
+[Download the latest Windows release](https://github.com/MarkLao668/pianke-daily/releases/latest)
 
-### 古典风格
+## Preview
 
-山水、孤松、长阶与行者构成每日场景，配合楷宋字体、纸色界面和十二时辰古钟。
+### Classical theme
 
-![片刻日程古典风格完整界面](docs/screenshot-classical.png)
+Landscapes, solitary pines, long stairways, and wandering figures shape the seven daily scenes. The interface pairs them with Chinese-inspired serif typography, warm paper tones, and a traditional twelve-period clock.
 
-### 现代风格
+![Pianke Daily classical theme](docs/screenshot-classical.png)
 
-现代建筑、玻璃、空旷空间与微小人物构成另一套七日画面，界面同步切换为冷灰配色、几何字体和建筑式时钟。
+### Modern theme
 
-![片刻日程现代风格完整界面](docs/screenshot-modern.png)
+Modern architecture, glass, open spaces, and distant figures form a second set of seven scenes. The interface changes with them, using cool mineral colors, geometric typography, and an architectural clock.
 
-> 截图中的标题和事项均为虚构演示内容，不包含开发者或使用者的真实日程。
+![Pianke Daily modern theme](docs/screenshot-modern.png)
 
-## 功能
+> All titles and tasks shown in the screenshots are fictional demo content. They do not contain any real schedule or personal information.
 
-- 完全本地运行，不要求注册账号，不访问网络。
-- 内置“古典风格”与“现代风格”，主题选择会保存在本机。
-- 古典风格使用七幅原创武侠电影画面、楷宋字体、宣纸配色和十二地支古钟。
-- 现代风格使用七幅原创现代主义电影画面、几何无衬线字体、冷灰矿物配色和方形现代钟。
-- 支持题签、旁白、事项时间、备注、完成状态和每日进度。
-- 两套时钟均显示实时时间；古典主题同时保留传统时辰读法。
-- 支持简体中文、繁體中文、English、日本語、한국어、Español、Français、Deutsch、Português、Русский、العربية和हिन्दी。
-- 支持 JSON 数据备份，日程数据不会保存在源码目录中。
+## Features
 
-## 下载（普通用户）
+- Runs entirely on your computer, with no account, cloud service, or network connection required.
+- Includes Classical and Modern visual themes; your selected theme is saved locally.
+- Provides seven original daily artworks for each theme.
+- Changes the artwork, typography, colors, and clock together when switching themes.
+- Supports daily titles, reflections, task times, notes, completion states, and progress tracking.
+- Displays real-time clocks in both themes; the Classical theme also includes a traditional Chinese time-period reading.
+- Supports 12 interface languages: Simplified Chinese, Traditional Chinese, English, Japanese, Korean, Spanish, French, German, Portuguese, Russian, Arabic, and Hindi.
+- Exports all planner data as a JSON backup.
+- Keeps schedule data outside the source-code directory and never uploads it.
 
-目前正式支持 Windows 10/11（64 位），不需要安装 Node.js，也不需要下载源码。
+## Download for Windows
 
-1. 打开仓库右侧的 **Releases**。
-2. 进入最新版本，在 **Assets** 中下载 `片刻日程-*-便携版.exe`。
-3. 把 EXE 放在任意文件夹，双击即可运行；它是便携版，不需要安装。
+Pianke Daily currently supports 64-bit Windows 10 and Windows 11. You do not need Node.js or the source code to use the application.
 
-Windows 首次打开未签名的开源软件时，可能显示安全提示。请确认文件来自本仓库的 Releases 页面后再运行。
+1. Open the [latest release](https://github.com/MarkLao668/pianke-daily/releases/latest).
+2. Under **Assets**, download `pianke-daily-*-windows-x64.exe`.
+3. Place the EXE in any folder and double-click it to launch Pianke Daily. It is a portable application and does not require installation.
 
-## 使用方法
+The application is not currently code-signed, so Windows may display a security warning the first time it is opened. Confirm that the file came from this repository's official Releases page before running it.
 
-### 1. 选择日期
+## How to use
 
-顶部七张缩略图对应一周七天。点击任意一天即可查看和编辑当天日程，也可以使用日期两侧的箭头切换前后一天；“回到今日”会立即返回当天。
+### 1. Choose a day
 
-### 2. 写下当天主题
+The seven thumbnails across the top represent the seven days of the selected week. Select any thumbnail to view and edit that day's plan. Use the arrows beside the date to move one day backward or forward, or select **Today** to return to the current date.
 
-在“今日题签”中给当天取一个标题，在下方旁白框记录一句提醒、感受或当天目标。输入框失去焦点后，内容会自动保存在本机。
+### 2. Set the tone for the day
 
-### 3. 添加和完成事项
+Use the daily title field to name the day. The text area beneath it can hold a reminder, reflection, or main intention. Your changes are saved automatically on your computer after you leave the field.
 
-在“要做的事”下方选择时间、输入事项，然后点击“添一笔”。事项加入后可以：
+### 3. Add and complete tasks
 
-- 点击左侧圆点标记完成或恢复未完成；
-- 直接修改事项标题、备注和时间；
-- 点击右侧删除按钮移除事项；
-- 通过进度圆环查看当天完成比例。
+Choose a time, enter a task, and select **Add**. After a task has been created, you can:
 
-### 4. 切换风格与语言
+- Select the circle on the left to mark it complete or incomplete.
+- Edit its title, note, or time directly.
+- Use the delete button on the right to remove it.
+- Check the progress ring to see how much of the day's plan is complete.
 
-右上角的“风格”菜单可以在古典风格和现代风格之间切换。七日图片、字体、界面颜色和时钟会一起改变，选择会保存在本机。
+### 4. Change the theme and language
 
-“语言”菜单支持十二种常用语言，切换后日期、按钮、提示和主题文字会同步更新。
+Use the **Theme** menu in the upper-right corner to switch between the Classical and Modern themes. The seven daily images, typography, interface colors, and clock will change together. Your choice is saved locally.
 
-### 5. 查看和备份数据
+Use the **Language** menu to select any of the 12 supported languages. Dates, buttons, messages, and theme labels update immediately.
 
-软件右下角提供两个数据功能：
+### 5. Find or back up your data
 
-- **数据位置**：打开本机日程数据所在文件夹；
-- **备份**：把全部日程导出成一个 JSON 文件，方便自行保存。
+Two data controls are available in the lower-right corner:
 
-日程数据只保存在使用者自己的电脑上，不会上传到本项目或任何服务器。
+- **Data location** opens the folder containing your local planner data.
+- **Backup** exports your complete schedule as a JSON file to a location you choose.
 
-## 快捷键
+Your schedule stays on your own computer. Pianke Daily does not upload it to this repository or to any server.
 
-- `Ctrl + N`：快速定位到新事项输入框。
-- `Alt + ← / →`：切换前一天或后一天。
+## Keyboard shortcuts
 
-## 从源码运行
+- `Ctrl + N`: Move directly to the new-task field.
+- `Alt + Left Arrow / Right Arrow`: Move to the previous or next day.
 
-请先安装 Node.js 与 npm，然后在项目目录中运行：
+## Run from source
+
+Install Node.js and npm, then run the following commands in the project directory:
 
 ```powershell
 npm install
 npm start
 ```
 
-运行自动测试：
+Run the automated tests:
 
 ```powershell
 npm test
 ```
 
-构建 Windows 便携版：
+Build the 64-bit Windows portable application:
 
 ```powershell
 npm run dist
 ```
 
-构建结果会生成在本地的 `release` 目录中；该目录不会提交到源码仓库。
+Build output is written to the local `release` directory. This directory is excluded from the repository.
 
-## 数据与隐私
+## Data and privacy
 
-软件通过 Electron 的系统应用数据目录保存 `planner-data.json`。点击软件右下角的“数据位置”可以直接查看文件所在位置。
+Pianke Daily stores `planner-data.json` in Electron's system application-data directory. Select **Data location** inside the application to open the exact folder.
 
-- 软件没有网络请求功能。
-- 源码仓库不包含个人日程数据。
-- 删除程序不会主动删除已保存的日程数据。
-- 建议定期使用软件中的“备份”功能导出 JSON 文件。
+- The application does not make network requests.
+- The repository does not contain personal planner data.
+- Removing the application does not automatically delete previously saved planner data.
+- Regular JSON backups are recommended.
 
-更完整的说明请参阅 [隐私说明](PRIVACY.md)。仓库默认忽略所有日程 JSON、EXE、构建产物和本地缓存。
+Read the full [Privacy Notice](PRIVACY.md). The repository ignores schedule JSON files, EXE files, build output, local caches, logs, and environment files by default.
 
-## 项目结构
+## Project structure
 
 ```text
-app/          界面、样式、多语言和交互逻辑
-assets/days/          古典风格的一周七日画面
-assets/themes/modern/ 现代风格的一周七日画面
-build/        Windows 应用图标
-tests/        本地数据与多语言测试
-main.js       Electron 主进程
-data-store.js 本地日程数据存储
+app/                  Interface, styling, localization, and interaction logic
+assets/days/          Seven Classical-theme artworks
+assets/themes/modern/ Seven Modern-theme artworks
+build/                Windows application icon
+tests/                Local-data and localization tests
+main.js               Electron main process
+data-store.js         Local planner-data storage
 ```
 
-## 参与贡献
+## Contributing
 
-欢迎提交 Issue、改进翻译或提出界面与功能建议。提交代码前请先运行 `npm test`，并确保没有把个人日程、备份文件或构建产物加入提交。
+Issues, translation improvements, design suggestions, and pull requests are welcome. Before submitting code, run `npm test` and make sure your commit does not include personal schedules, exported backups, EXE files, or build output.
 
-## 许可证
+## License
 
-本项目使用 [MIT License](LICENSE)。版权所有 © 2026 Mark LAO。
+Pianke Daily is released under the [MIT License](LICENSE). Copyright © 2026 Mark LAO.

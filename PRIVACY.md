@@ -1,21 +1,25 @@
-# 隐私说明
+# Privacy Notice
 
-片刻日程是一款完全本地运行的日程软件。
+Pianke Daily is a fully offline planner. It does not require an account and does not send planner data over the internet.
 
-## 数据保存
+## Data storage
 
-- 日程标题、旁白、事项、时间、备注与完成状态保存在 Electron 的系统应用数据目录中。
-- 软件不把日程写入源码目录。
-- 软件不要求账号，不包含遥测、广告、统计或网络同步功能。
-- 只有用户主动点击“备份”并选择保存位置时，软件才会导出 JSON 备份。
+- Daily titles, reflections, tasks, times, notes, and completion states are stored in Electron's system application-data directory.
+- Planner data is never written to the source-code directory.
+- The application contains no telemetry, advertising, analytics, or cloud-sync features.
+- A JSON file is exported only when the user selects **Backup** and chooses a save location.
 
-## 开源仓库不包含的内容
+## Content excluded from the public repository
 
-本仓库不提交以下文件：
+This repository does not include:
 
-- `planner-data.json` 或其他日程 JSON；
-- 用户导出的备份；
-- Windows EXE 与构建目录；
-- 本地缓存、测试用户目录、日志和环境变量文件。
+- `planner-data.json` or other schedule JSON files;
+- backups exported by users;
+- Windows EXE files or local build directories;
+- local caches, test user-data directories, logs, or environment files.
 
-`.gitignore` 默认忽略所有 JSON 文件，仅放行项目构建必需的 `package.json` 与 `package-lock.json`。发布代码前仍应检查暂存文件，确认其中没有个人内容。
+The repository's `.gitignore` excludes all JSON files by default, except for the `package.json` and `package-lock.json` files required to build the project. Contributors should still inspect staged files before every commit to make sure no personal content is included.
+
+## Removing local data
+
+Deleting the portable EXE does not automatically remove saved planner data. To find the data folder, open Pianke Daily and select **Data location**. Back up any information you want to keep before deleting that folder manually.

@@ -1,7 +1,7 @@
 {
   "name": "pianke-daily-desktop",
   "version": "1.2.0",
-  "description": "片刻日程——带古典与现代双主题电影美学的本地日程软件",
+  "description": "A private, fully offline Windows planner with a cinematic visual identity",
   "main": "main.js",
   "author": "Mark LAO",
   "license": "MIT",
